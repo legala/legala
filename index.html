@@ -17,42 +17,42 @@
       height: 100vh;
     }
 
-    .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      height: 100%;
-    }
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
 
-    .output-container, .form-container {
-      padding: 20px;
-      box-sizing: border-box;
-      overflow-y: auto;
-      background-color: #1e1e1e; /* Еще темнее фон для блоков */
-    }
+.output-container, .form-container {
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #1e1e1e; /* Еще темнее фон для блоков */
+}
 
-    .output-container {
-      border-right: 1px solid #333; /* Темная граница */
-    }
+.output-container {
+  border-right: 1px solid #333; /* Темная граница */
+  overflow-y: hidden; /* Убираем прокрутку */
+}
 
-    textarea {
-      width: 100%;
-      height: calc(100% - 40px);
-      box-sizing: border-box;
-      resize: none;
-      border: none;
-      background-color: #2c2c2c; /* Очень темный фон для textarea */
-      border-radius: 4px;
-      padding: 15px;
-      font-size: 16px;
-      color: #e0e0e0; /* Светлый текст */
-      line-height: 1.5;
-      font-family: inherit;
-    }
+textarea {
+  width: 100%;
+  height: calc(100% - 40px);
+  box-sizing: border-box;
+  resize: none;
+  border: none;
+  background-color: #2c2c2c; /* Очень темный фон для textarea */
+  border-radius: 4px;
+  padding: 15px;
+  font-size: 16px;
+  color: #e0e0e0; /* Светлый текст */
+  line-height: 1.5;
+  font-family: inherit;
+}
 
-    textarea:focus {
-      outline: none;
-      background-color: #3a3a3a; /* Цвет фона при фокусе */
-    }
+textarea:focus {
+  outline: none;
+  background-color: #3a3a3a; /* Цвет фона при фокусе */
+}
 
     .form-group {
       margin-bottom: 15px;
