@@ -3,138 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>яНЯРЮБКЕМХЕ ГЮЪБКЕМХЪ (ой БЕПЯХЪ)</title>
+  <title>Составление заявления (ПК версия)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"> <!-- Подключаем шрифт Roboto -->
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Roboto", sans-serif; /* Шрифт Roboto */
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
-      color: #333;
+      background-color: #121212; /* Очень темный фон */
+      color: #e0e0e0; /* Светлый текст */
       display: flex;
       flex-direction: column;
       height: 100vh;
     }
+
     .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       height: 100%;
     }
+
     .output-container, .form-container {
       padding: 20px;
       box-sizing: border-box;
       overflow-y: auto;
-      background-color: #fff;
+      background-color: #1e1e1e; /* Еще темнее фон для блоков */
     }
+
     .output-container {
-      border-right: 1px solid #e0e0e0;
+      border-right: 1px solid #333; /* Темная граница */
     }
+
     textarea {
       width: 100%;
       height: calc(100% - 40px);
       box-sizing: border-box;
       resize: none;
       border: none;
-      background-color: #f5f5f5;
+      background-color: #2c2c2c; /* Очень темный фон для textarea */
       border-radius: 4px;
       padding: 15px;
       font-size: 16px;
-      color: #333;
+      color: #e0e0e0; /* Светлый текст */
       line-height: 1.5;
       font-family: inherit;
     }
+
     textarea:focus {
       outline: none;
+      background-color: #3a3a3a; /* Цвет фона при фокусе */
     }
+
     .form-group {
       margin-bottom: 15px;
     }
+
     label {
       font-weight: bold;
       display: block;
       margin-bottom: 8px;
       font-size: 14px;
-      color: #555;
+      color: #bbb; /* Светлый цвет для меток */
     }
+
     input, select {
       width: 100%;
       padding: 10px 15px;
       font-size: 16px;
-      border: 1px solid #ddd;
+      border: 1px solid #333; /* Темная рамка */
       border-radius: 4px;
       box-sizing: border-box;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #2c2c2c; /* Темный фон для полей */
+      color: #e0e0e0; /* Светлый цвет текста */
       font-family: inherit;
     }
+
     input:focus, select:focus {
-      border-color: #007BFF;
+      border-color: #007BFF; /* Голубая граница при фокусе */
       outline: none;
-      background-color: #fff;
+      background-color: #3a3a3a; /* Цвет фона при фокусе */
     }
+
     h2 {
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 15px;
-      color: #333;
+      color: #fff; /* Белый цвет заголовков */
     }
+
   </style>
 </head>
 <body>
   <div class="container">
     <div class="output-container">
-      <h2>рЕЙЯР ГЮЪБКЕМХЪ</h2>
+      <h2>Текст заявления</h2>
       <textarea id="output" readonly>
-йнцдю цде йрн (опхлерш ) (янярюб )ПСЙНБНДЯРБСЪЯЭ лнрхбнл ЯНБЕПЬХК янашрхе, МЮМЕЯЪ РЕЛ ЯЮЛШЛ онякедярбхъ, РЮЙХЛ НАПЮГНЛ МЮПСЬХБ сй, ВРН ОНДРБЕПФДЮЕРЯЪ днйюгюрекэярбюлх.
+КОГДА ГДЕ КТО (ПРИМЕТЫ ) (СОСТАВ )руководствуясь МОТИВОМ совершил СОБЫТИЕ, нанеся тем самым ПОСЛЕДСТВИЯ, таким образом нарушив УК, что подтверждается ДОКАЗАТЕЛЬСТВАМИ.
       </textarea>
     </div>
     <div class="form-container">
-      <h2>тНПЛЮ ДКЪ ГЮОНКМЕМХЪ</h2>
+      <h2>Форма для заполнения</h2>
       <form id="form">
         <div class="form-group">
-          <label for="when">йНЦДЮ ОПНХГНЬКН ЯНАШРХЕ?</label>
-          <input type="text" id="when" placeholder="оПХЛЕП: 2024-12-22 14:00 ХКХ 2024-12-22 14:00 - 2024-12-23 18:00">
+          <label for="when">Когда произошло событие?</label>
+          <input type="text" id="when" placeholder="Пример: 2024-12-22 14:00 или 2024-12-22 14:00 - 2024-12-23 18:00">
         </div>
         <div class="form-group">
-          <label for="where">цДЕ Я БЮЛХ ЯКСВХКНЯЭ ЩРН ЯНАШРХЕ?</label>
-          <input type="text" id="where" placeholder="оПХЛЕП: сКХЖЮ оСЬЙХМЮ, ЦНПНД лНЯЙБЮ">
+          <label for="where">Где с вами случилось это событие?</label>
+          <input type="text" id="where" placeholder="Введите место">
         </div>
         <div class="form-group">
-          <label for="who">йРН ЯНБЕПЬХК ЩРН ДЕИЯРБХЕ?</label>
-          <input type="text" id="who" placeholder="бБЕДХРЕ ХЛЪ ХКХ НОХЯЮМХЕ ГКНСЛШЬКЕММХЙЮ">
+          <label for="who">Кто совершил это действие?</label>
+          <input type="text" id="who" placeholder="Введите имя или описание">
         </div>
         <div class="form-group">
-          <label for="traits">(оПХЛЕРШ)</label>
-          <input type="text" id="traits" placeholder="бБЕДХРЕ ОПХЛЕРШ (ЕЯКХ ЕЯРЭ)">
+          <label for="traits">(Приметы)</label>
+          <input type="text" id="traits" placeholder="Введите приметы (если есть)">
         </div>
         <div class="form-group">
-          <label for="composition">(яНЯРЮБ)</label>
+          <label for="composition">(Состав)</label>
           <select id="composition">
-            <option value="">мЕР НРБЕРЮ</option>
-            <option value="ЦПСООШ КХЖ">ЦПСООШ КХЖ</option>
-            <option value="ЦПСООШ КХЖ ОН ОПЕДБЮПХРЕКЭМНЛС ЯЦНБНПС">ЦПСООШ КХЖ ОН ОПЕДБЮПХРЕКЭМНЛС ЯЦНБНПС</option>
-            <option value="НПЦЮМХГНБЮММНИ ЦПСООШ">НПЦЮМХГНБЮММНИ ЦПСООШ</option>
+            <option value="">Нет ответа</option>
+            <option value="группы лиц">группы лиц</option>
+            <option value="группы лиц по предварительному сговору">группы лиц по предварительному сговору</option>
+            <option value="организованной группы">организованной группы</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="motive">йЮЙНБ, ОН БЮЬЕЛС ЛМЕМХЧ, АШК ЛНРХБ?</label>
-          <input type="text" id="motive" placeholder="бБЕДХРЕ ОПЕДОНКЮЦЮЕЛШИ ЛНРХБ">
+          <label for="motive">Каков, по вашему мнению, был мотив?</label>
+          <input type="text" id="motive" placeholder="Введите предполагаемый мотив">
         </div>
         <div class="form-group">
-          <label for="event">вРН ОПНХГНЬКН?</label>
-          <input type="text" id="event" placeholder="нОХЬХРЕ ЯНАШРХЕ">
-</div>
-        <div class="form-group">
-          <label for="consequences">йЮЙХЕ АШКХ ОНЯКЕДЯРБХЪ?</label>
-          <input type="text" id="consequences" placeholder="нОХЬХРЕ ОНЯКЕДЯРБХЪ">
+          <label for="event">Что произошло?</label>
+          <input type="text" id="event" placeholder="Опишите событие">
         </div>
         <div class="form-group">
-          <label for="evidence">йЮЙХЕ С БЮЯ ЕЯРЭ ДНЙЮГЮРЕКЭЯРБЮ?</label>
-          <input type="text" id="evidence" placeholder="нОХЬХРЕ ХЛЕЧЫХЕЯЪ ДНЙЮГЮРЕКЭЯРБЮ">
+          <label for="consequences">Какие были последствия?</label>
+          <input type="text" id="consequences" placeholder="Опишите последствия">
         </div>
         <div class="form-group">
-          <label for="law">йЮЙЮЪ ЯРЮРЭЪ сй АШКЮ МЮПСЬЕМЮ?</label>
-          <input type="text" id="law" placeholder="бБЕДХРЕ ЯРЮРЭЧ ХКХ НОХЯЮМХЕ">
+          <label for="evidence">Какие у вас есть доказательства?</label>
+          <input type="text" id="evidence" placeholder="Опишите имеющиеся доказательства">
+        </div>
+        <div class="form-group">
+          <label for="law">Какая статья УК была нарушена?</label>
+          <input type="text" id="law" placeholder="Введите статью или описание">
         </div>
       </form>
     </div>
@@ -144,22 +157,22 @@
   const form = document.getElementById('form');
   const output = document.getElementById('output');
 
-  // дНАЮБКЪЕЛ НАПЮАНРВХЙ ЯНАШРХИ
+  // Добавляем обработчик событий
   form.addEventListener('input', () => {
-    // оНКСВЮЕЛ ГМЮВЕМХЪ БЯЕУ ОНКЕИ ТНПЛШ
-    const when = document.getElementById('when').value || 'йнцдю';
-    const where = document.getElementById('where').value || 'цде';
-    const who = document.getElementById('who').value || 'йрн';
-    const traits = document.getElementById('traits').value ? (${document.getElementById('traits').value})  : '';
-    const composition = document.getElementById('composition').value ? (${document.getElementById('composition')})  : '';
-    const motive = document.getElementById('motive').value || 'лнрхбнл';
-    const event = document.getElementById('event').value || 'янашрхе';
-    const consequences = document.getElementById('consequences').value || 'онякедярбхъ';
-    const evidence = document.getElementById('evidence').value || 'днйюгюрекэярбюлх';
-    const law = document.getElementById('law').value || 'сй';
+    // Получаем значения всех полей формы
+    const when = document.getElementById('when').value || 'КОГДА';
+    const where = document.getElementById('where').value || 'ГДЕ';
+    const who = document.getElementById('who').value || 'КТО';
+    const traits = document.getElementById('traits').value ? `(${document.getElementById('traits').value})`  : '';
+    const composition = document.getElementById('composition').value ? `(${document.getElementById('composition').value})`  : '';
+    const motive = document.getElementById('motive').value || 'МОТИВОМ';
+    const event = document.getElementById('event').value || 'СОБЫТИЕ';
+    const consequences = document.getElementById('consequences').value || 'ПОСЛЕДСТВИЯ';
+    const evidence = document.getElementById('evidence').value || 'ДОКАЗАТЕЛЬСТВАМИ';
+    const law = document.getElementById('law').value || 'УК';
 
-    // нАМНБКЪЕЛ РЕЙЯР ГЮЪБКЕМХЪ
-    output.value = ${when} ${where} ${who} ${traits}${composition}ПСЙНБНДЯРБСЪЯЭ ${motive} ЯНБЕПЬХК ${event}, МЮМЕЯЪ РЕЛ ЯЮЛШЛ ${consequences}, РЮЙХЛ НАПЮГНЛ МЮПСЬХБ ${law}, ВРН ОНДРБЕПФДЮЕРЯЪ ${evidence}.;
+    // Обновляем текст заявления
+    output.value = `${when} ${where} ${who} ${traits} ${composition} руководствуясь ${motive} совершил ${event}, нанеся тем самым ${consequences}, таким образом нарушив ${law}, что подтверждается ${evidence}.`;
   });
 </script>
 </body>
