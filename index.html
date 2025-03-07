@@ -109,6 +109,46 @@
       margin-bottom: 15px;
       color: #fff; /* Белый цвет заголовков */
     }
+
+    /* Медиа-запросы для мобильных версий */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr; /* Один столбец на мобильных устройствах */
+      }
+
+      .output-container {
+        border-right: none; /* Убираем правую границу на мобильных */
+        border-bottom: 1px solid #333; /* Добавляем границу снизу */
+      }
+
+      .output-wrapper {
+        margin-top: 0; /* Текст заявления находится вверху */
+        margin-bottom: 20px; /* Отступ снизу для текста заявления */
+      }
+
+      .form-container {
+        margin-top: 20px; /* Немного отступаем форму снизу */
+      }
+
+      textarea {
+        min-height: 150px; /* Уменьшаем минимальную высоту текстового поля */
+      }
+
+      h2 {
+        font-size: 16px; /* Меньший размер заголовков на мобильных */
+      }
+    }
+
+    /* Для еще меньших экранов */
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 14px; /* Еще меньше размер заголовков */
+      }
+
+      textarea {
+        min-height: 100px; /* Уменьшаем минимальную высоту на маленьких экранах */
+      }
+    }
   </style>
 </head>
 <body>
