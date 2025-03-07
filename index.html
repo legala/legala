@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Составление заявления (ПК версия)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"> <!-- Подключаем шрифт Roboto -->
+  <title>Составление заявления</title>
+  <!-- Подключаем шрифт Caveat для текста заявления -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+  <!-- Подключаем шрифт Roboto для остальных элементов -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ponomar&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: "Roboto", sans-serif; /* Шрифт Roboto */
+      font-family: 'Montserrat'; /* Шрифт Roboto для всего тела */
       margin: 0;
       padding: 0;
-      background-color: #121212; /* Очень темный фон */
-      color: #e0e0e0; /* Светлый текст */
+      background-color: #121212;
+      color: #e0e0e0;
       display: flex;
       flex-direction: column;
       height: 100vh;
@@ -26,7 +31,7 @@
     .output-container, .form-container {
       padding: 20px;
       box-sizing: border-box;
-      background-color: #1e1e1e; /* Темный фон блоков */
+      background-color: #1e1e1e;
       display: flex;
       flex-direction: column;
     }
@@ -34,12 +39,14 @@
     .output-container {
       border-right: 1px solid #333;
       align-items: center;
-      justify-content: flex-start; /* Заголовок и текст не центрированы по вертикали */
+      justify-content: flex-start;
     }
 
     h2 {
       text-align: center;
       margin-top: 0;
+      font-family: 'Amatic SC', cursive; /* Шрифт Amatic SC для заголовков */
+      font-size: 36px;
     }
 
     .output-wrapper {
@@ -49,28 +56,44 @@
       justify-content: flex-start;
       flex-grow: 1;
       width: 100%;
-      margin-top: 15%; /* Отступаем вниз на 25% высоты контейнера */
+      margin-top: 25%;
     }
 
+    .textarea-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      min-height: 200px;
+    }
+
+    /* Используем шрифт Caveat только для текста заявления */
     textarea {
       width: 100%;
-      height: auto;
+      height: 100%;
       box-sizing: border-box;
       resize: none;
       border: none;
       background-color: #2c2c2c;
       border-radius: 4px;
       padding: 15px;
-      font-size: 16px;
+      font-size: 28px;
       color: #e0e0e0;
       line-height: 1.5;
-      font-family: inherit;
+      font-family: 'Caveat', cursive; /* Шрифт Caveat только для текста заявления */
+      text-align: center;
+      display: block;
       min-height: 200px;
+      background: transparent;
+      position: absolute;
     }
 
-    textarea:focus {
-      outline: none;
-      background-color: #3a3a3a;
+    textarea::placeholder {
+      color: #888;
+      text-align: center;
+      line-height: normal;
+      font-size: 16px;
     }
 
     .form-group {
@@ -82,71 +105,51 @@
       display: block;
       margin-bottom: 8px;
       font-size: 14px;
-      color: #bbb; /* Светлый цвет для меток */
+      color: #bbb;
     }
 
     input, select {
       width: 100%;
       padding: 10px 15px;
       font-size: 16px;
-      border: 1px solid #333; /* Темная рамка */
+      border: 1px solid #333;
       border-radius: 4px;
       box-sizing: border-box;
-      background-color: #2c2c2c; /* Темный фон для полей */
-      color: #e0e0e0; /* Светлый цвет текста */
+      background-color: #2c2c2c;
+      color: #e0e0e0;
       font-family: inherit;
     }
 
     input:focus, select:focus {
-      border-color: #007BFF; /* Голубая граница при фокусе */
+      border-color: #007BFF;
       outline: none;
-      background-color: #3a3a3a; /* Цвет фона при фокусе */
+      background-color: #3a3a3a;
     }
 
+    /* Заголовок для формы остается с шрифтом Roboto */
     h2 {
-      font-size: 18px;
+      font-size: 32px;
       font-weight: bold;
       margin-bottom: 15px;
-      color: #fff; /* Белый цвет заголовков */
+      color: #fff;
     }
 
-    /* Медиа-запросы для мобильных версий */
     @media (max-width: 768px) {
       .container {
-        grid-template-columns: 1fr; /* Один столбец на мобильных устройствах */
+        grid-template-columns: 1fr;
       }
 
       .output-container {
-        border-right: none; /* Убираем правую границу на мобильных */
-        border-bottom: 1px solid #333; /* Добавляем границу снизу */
-      }
-
-      .output-wrapper {
-        margin-top: 0; /* Текст заявления находится вверху */
-        margin-bottom: 20px; /* Отступ снизу для текста заявления */
+        border-right: none;
+        border-bottom: 1px solid #333;
       }
 
       .form-container {
-        margin-top: 20px; /* Немного отступаем форму снизу */
+        margin-top: 20px;
       }
 
       textarea {
-        min-height: 150px; /* Уменьшаем минимальную высоту текстового поля */
-      }
-
-      h2 {
-        font-size: 16px; /* Меньший размер заголовков на мобильных */
-      }
-    }
-
-    /* Для еще меньших экранов */
-    @media (max-width: 480px) {
-      h2 {
-        font-size: 14px; /* Еще меньше размер заголовков */
-      }
-
-      textarea {
-        min-height: 100px; /* Уменьшаем минимальную высоту на маленьких экранах */
+        min-height: 150px;
       }
     }
   </style>
@@ -156,58 +159,60 @@
     <div class="output-container">
       <h2>Текст заявления</h2>
       <div class="output-wrapper">
-        <textarea id="output" readonly>
-КОГДА ГДЕ КТО (ПРИМЕТЫ ) (СОСТАВ )руководствуясь МОТИВОМ совершил СОБЫТИЕ, нанеся тем самым ПОСЛЕДСТВИЯ, таким образом нарушив УК, что подтверждается ДОКАЗАТЕЛЬСТВАМИ.
-        </textarea>
+        <div class="textarea-container">
+          <textarea id="output" readonly>
+            Тут будет текст заявления
+          </textarea>
+        </div>
       </div>
     </div>
     <div class="form-container">
       <h2>Форма для заполнения</h2>
       <form id="form">
         <div class="form-group">
-          <label for="when">Когда произошло событие?</label>
-          <input type="text" id="when" placeholder="Пример: 2024-12-22 14:00 или 2024-12-22 14:00 - 2024-12-23 18:00">
+          <label for="when">Когда произошло преступление?</label>
+          <input type="text" id="when" placeholder="Пример: 01 января 2000 г. в 12:00 или с 12:00 01 января 2000 г. по 12:00 02 января 2000 г.">
         </div>
         <div class="form-group">
-          <label for="where">Где с вами случилось это событие?</label>
-          <input type="text" id="where" placeholder="Введите место">
+          <label for="where">Где случилось преступление?</label>
+          <input type="text" id="where" placeholder="Пример: В моей квартире, по ул. Пушкина, г. Москва">
         </div>
         <div class="form-group">
-          <label for="who">Кто совершил это действие?</label>
-          <input type="text" id="who" placeholder="Введите имя или описание">
+          <label for="who">Кто совершил преступление?</label>
+          <input type="text" id="who" placeholder="Пример: Злодеев Владимир Владимирович">
         </div>
         <div class="form-group">
-          <label for="traits">(Приметы)</label>
-          <input type="text" id="traits" placeholder="Введите приметы (если есть)">
+          <label for="traits">Приметы</label>
+          <input type="text" id="traits" placeholder="(не обязательно)">
         </div>
         <div class="form-group">
-          <label for="composition">(Состав)</label>
+          <label for="composition">Если преступник был не один, то в каком составе?</label>
           <select id="composition">
-            <option value="">Нет ответа</option>
+            <option value="">Преступник был один</option>
             <option value="группы лиц">группы лиц</option>
             <option value="группы лиц по предварительному сговору">группы лиц по предварительному сговору</option>
             <option value="организованной группы">организованной группы</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="motive">Каков, по вашему мнению, был мотив?</label>
-          <input type="text" id="motive" placeholder="Введите предполагаемый мотив">
+          <label for="motive">Какой мотив, по вашему мнению, был у преступника?</label>
+          <input type="text" id="motive" placeholder="Пример: получить удовлетворение; обогатиться">
         </div>
         <div class="form-group">
-          <label for="event">Что произошло?</label>
-          <input type="text" id="event" placeholder="Опишите событие">
+          <label for="event">Какое преступление было совершено?</label>
+          <input type="text" id="event" placeholder="Пример: открытое хищение; ложный донос; оставление в опасности">
         </div>
         <div class="form-group">
-          <label for="consequences">Какие были последствия?</label>
-          <input type="text" id="consequences" placeholder="Опишите последствия">
+          <label for="consequences">Какой ущерб был нанесен?</label>
+          <input type="text" id="consequences" placeholder="Пример: материальный ущерб в крупном размере; тяжкие телесные повреждения; моральный вред">
         </div>
         <div class="form-group">
-          <label for="evidence">Какие у вас есть доказательства?</label>
-          <input type="text" id="evidence" placeholder="Опишите имеющиеся доказательства">
+          <label for="evidence">Перечислите доказательства, которые могут подтвердить произошедшее?</label>
+          <input type="text" id="evidence" placeholder="Пример: видеозаписи, очевидцы, правовые акты">
         </div>
         <div class="form-group">
           <label for="law">Какая статья УК была нарушена?</label>
-          <input type="text" id="law" placeholder="Введите статью или описание">
+          <input type="text" id="law" placeholder="Сравните текст УК РФ и вашу ситуацию, выбирите подходящее">
         </div>
       </form>
     </div>
@@ -217,21 +222,18 @@
     const form = document.getElementById('form');
     const output = document.getElementById('output');
 
-    // Добавляем обработчик событий
     form.addEventListener('input', () => {
-      // Получаем значения всех полей формы
       const when = document.getElementById('when').value || 'КОГДА';
       const where = document.getElementById('where').value || 'ГДЕ';
       const who = document.getElementById('who').value || 'КТО';
-      const traits = document.getElementById('traits').value ? `(${document.getElementById('traits').value})`  : '';
-      const composition = document.getElementById('composition').value ? `(${document.getElementById('composition').value})`  : '';
+      const traits = document.getElementById('traits').value ? `(${document.getElementById('traits').value})` : '';
+      const composition = document.getElementById('composition').value ? `(${document.getElementById('composition').value})` : '';
       const motive = document.getElementById('motive').value || 'МОТИВОМ';
       const event = document.getElementById('event').value || 'СОБЫТИЕ';
       const consequences = document.getElementById('consequences').value || 'ПОСЛЕДСТВИЯ';
       const evidence = document.getElementById('evidence').value || 'ДОКАЗАТЕЛЬСТВАМИ';
       const law = document.getElementById('law').value || 'УК';
 
-      // Обновляем текст заявления
       output.value = `${when} ${where} ${who} ${traits} ${composition} руководствуясь ${motive} совершил ${event}, нанеся тем самым ${consequences}, таким образом нарушив ${law}, что подтверждается ${evidence}.`;
     });
   </script>
